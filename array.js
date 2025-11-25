@@ -40,6 +40,49 @@ class Array{
         this.length++;
 
     }
+    delete(index) {
+    //Correcting Statement || Must be False
+    if (index < 0 || index >= this.length) {
+        console.log("Invalid Index");
+        return;
+    }
+
+    //Shifting Condition
+    for (let i = index; i < this.length - 1; i++) {
+        this.data[i] = this.data[i + 1];
+    }
+
+    //After Condition
+    delete this.data[this.length - 1];
+    this.length--;
+}
+
+    update(index,element){
+        //Correcting Statement || Must be False
+    if (index < 0 || index >= this.length) {
+        console.log("Invalid Index");
+        return;
+
+}
+    //After Condition
+    this.data[index] = element;
+
+}
+
+search(element){
+    //Must be True
+    for(let i=0; i< this.length; i++){
+        if(this.data[i] === element){
+           console.log(element + " is found at index "+i);
+            return i;
+        
+
+        }
+    }
+//False
+        console.log(element +" is not found at any index");
+        return -1;
+    }
 }
 
 //
@@ -49,3 +92,11 @@ arr1= new Array([4,2,3]);
 arr1.traverse();
 arr1.insert(0,9);
 arr1.traverse();
+
+arr1.delete(3);
+arr1.traverse();
+
+arr1.search(43);
+arr1.search(9);
+
+
