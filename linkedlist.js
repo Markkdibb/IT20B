@@ -45,16 +45,17 @@ class LinkedList{
         let current = this.head;
 
         while(current.next){
-            current.next
+            current = current.next
         }
             
-
+        current.next = node;
 
     }
 }
 
 let list1 = new LinkedList();
-list1.insert_at_beginning(5);
+list1.insert_at_end(5);
 list1.insert_at_beginning(3);
-list1.insert_at_beginning(1);
+list1.insert_at_end(1);
 console.log(list1.traverse());
+
